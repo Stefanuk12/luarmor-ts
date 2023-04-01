@@ -1,0 +1,27 @@
+{
+  "name": "luarmor-ts",
+  "version": "1.0.0",
+  "description": "A luarmor.net API wrapper written in TypeScript",
+  "main": "./lib/index.js",
+  "type": "module",
+  "types": "./lib/index.d.ts",
+  "keywords": [
+    "luarmor"
+  ],
+  "author": "Stefanuk12",
+  "license": "MIT",
+  "dependencies": {
+    "got": "^12.6.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stefanuk12/luarmor-ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Stefanuk12/luarmor-ts/issues"
+  },
+  "homepage": "https://github.com/Stefanuk12/luarmor-ts#readme"
+}
