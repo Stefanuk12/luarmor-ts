@@ -1,6 +1,6 @@
 // Dependencies
-import { IBaseResponse } from "./IBaseResponse";
-import { IKeyCreatePayload } from "./IKeyCreate";
+import { IBaseResponse } from "./IBaseResponse.js";
+import { IKeyCreatePayload } from "./IKeyCreate.js";
 
 //
 export interface IKeyUpdatePayload extends IKeyCreatePayload {

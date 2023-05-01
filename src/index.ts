@@ -9,6 +9,7 @@ import { IUsers } from "./interfaces/IUsers.js"
 import { IResetHWID, IResetHWIDPayload } from "./interfaces/IResetHWID.js"
 import { ILinkDiscord, ILinkDiscordPayload } from "./interfaces/ILinkDiscord.js"
 import { IKeyUpdate, IKeyUpdatePayload } from "./interfaces/IKeyUpdate.js"
+import { IScriptCreate, IScriptCreatePayload } from "./interfaces/IScriptCreate.js"
 
 // Main class
 export class LuarmorClient {
@@ -94,5 +95,19 @@ export class LuarmorClient {
         return (await this.httpClient.post(`v3/projects/${project_id}/users/linkdiscord`, {
             json: payload
         }).json()) satisfies ILinkDiscord
+    }
+
+    // Create a new script
+    async createScript(project_id: string, payload: IScriptCreatePayload) {
+        return (await this.httpClient.post(`v3/projects/${project_id}/users/scripts`, {
+            json: payload
+        }).json()) satisfies IScriptCreate
+    }
+
+    // Update an existing script
+    async updateScript(project_id: string, script_id: string, payload: IScriptCreatePayload) {
+        return (await this.httpClient.put(`v3/projects/${project_id}/users/scripts/${script_id}`, {
+            json: payload
+        }).json()) satisfies IScriptCreate
     }
 }

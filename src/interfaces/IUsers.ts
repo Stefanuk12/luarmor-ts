@@ -1,6 +1,6 @@
 // Dependencies
-import { IBaseResponse } from "./IBaseResponse";
-import { IUserFull } from "./IUser";
+import { IBaseResponse } from "./IBaseResponse.js";
+import { IUserFull } from "./IUser.js";
 
 //
 export interface IUsers extends IBaseResponse {

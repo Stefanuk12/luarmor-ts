@@ -1,5 +1,5 @@
 // Dependencies
-import { IBaseResponse } from "./IBaseResponse";
+import { IBaseResponse } from "./IBaseResponse.js";
 
 //
 export interface ILinkDiscord extends IBaseResponse {
