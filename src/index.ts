@@ -4,7 +4,7 @@ import { IStatus } from "./interfaces/IStatus.js"
 import { IKeyDetails } from "./interfaces/IKeyDetails.js"
 import { IKeyCreate, IKeyCreatePayload } from "./interfaces/IKeyCreate.js"
 import { IDeleteKey } from "./interfaces/IDeleteKey.js"
-import { IUser } from "./interfaces/IUser.js"
+import { IUser, IUserGet } from "./interfaces/IUser.js"
 import { IUsers } from "./interfaces/IUsers.js"
 import { IResetHWID, IResetHWIDPayload } from "./interfaces/IResetHWID.js"
 import { ILinkDiscord, ILinkDiscordPayload } from "./interfaces/ILinkDiscord.js"
@@ -77,7 +77,7 @@ export class LuarmorClient {
     }
 
     // Getting users
-    async getUsers(project_id: string, payload: IUser = {}) {
+    async getUsers(project_id: string, payload: IUserGet = {}) {
         return (await this.httpClient.get(`v3/projects/${project_id}/users`, {
             searchParams: <any>payload
         }).json()) satisfies IUsers

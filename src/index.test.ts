@@ -15,8 +15,9 @@ console.log(await Client.status())
 
 // Grabbing key details
 console.log("Key details:")
-console.log(await Client.keyDetails())
-console.log((await Client.keyDetails()).projects?.at(0))
+const keyDetails = await Client.keyDetails()
+console.log(keyDetails)
+console.log(keyDetails.projects?.[0])
 
 // Grabbing key stats
 console.log("Key stats:")

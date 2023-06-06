@@ -6,6 +6,14 @@ export interface IUser {
     // Discord ID of the user. If not specified, user won't be able to resethwid on their own. They can still link their discord id to their key using /redeem command (if you configured the bot)
     discord_id?: string
 }
+export interface IUserGet {
+    // Discord ID of the user. If not specified, user won't be able to resethwid on their own. They can still link their discord id to their key using /redeem command (if you configured the bot)
+    discord_id?: string
+    // The key of the user
+    user_key?: string
+    // Identifier of the user to whitelist. Could be a HWID.
+    identifier?: string
+}
 export interface IUserFull extends IUser {
     user_key: string
     identifier_type: string
