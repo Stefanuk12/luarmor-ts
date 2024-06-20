@@ -124,8 +124,8 @@ export class LuarmorClient {
     }
 
     // Unblacklist a key
-    async unblacklistKey(project_id: string, unban_token: string) {
-        return this.get(`v3/projects/${project_id}/users/unban?unban_token=${unban_token}`)
+    static async unblacklistKey(project_id: string, unban_token: string) {
+        return fetch(`v3/projects/${project_id}/users/unban?unban_token=${unban_token}`).then(res => res.json())
     }
 
     // Create a new script
