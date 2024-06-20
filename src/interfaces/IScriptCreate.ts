@@ -10,10 +10,10 @@ export interface IScriptCreate extends IBaseResponse {
   silent: boolean
 }
 export interface IScriptCreatePayload {
-  name: string
-  ffa: boolean
-  silent: boolean
   script: string
+  silent: boolean
+  ffa: boolean
+  name: string
   heartbeat: boolean
   lightning: boolean
 }

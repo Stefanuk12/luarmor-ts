@@ -7,5 +7,5 @@ export interface IResetHWIDPayload {
     force?: boolean
 }
 export interface IResetHWID extends IBaseResponse {
-    message: "Successfully reset!" | "User key doesn't exist" | "Reset Hwid is disabled for this script"
+    message: "Successfully reset!" | "User key doesn't exist" | "Reset Hwid is disabled for this script" | "User is on cooldown."
 }

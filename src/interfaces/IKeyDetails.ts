@@ -12,4 +12,4 @@ export interface IKeyDetails extends IBaseResponse {
     plan?: string
     enabled?: number
     projects?: IProject[]
-  }
+}

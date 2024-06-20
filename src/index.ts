@@ -9,6 +9,8 @@ import { IResetHWID, IResetHWIDPayload } from "./interfaces/IResetHWID.js"
 import { ILinkDiscord, ILinkDiscordPayload } from "./interfaces/ILinkDiscord.js"
 import { IKeyUpdate, IKeyUpdatePayload } from "./interfaces/IKeyUpdate.js"
 import { IScriptCreate, IScriptCreatePayload } from "./interfaces/IScriptCreate.js"
+import { IKeyStats } from "./interfaces/IKeyStats.js"
+import { IBlacklistPayload } from "./interfaces/IBlacklist.js"
 
 // Main class
 export class LuarmorClient {
@@ -83,7 +85,7 @@ export class LuarmorClient {
 
     // Gets the stats of a key
     async keyStats(noUsers = false) {
-        return this.get<IKeyDetails>(`v3/keys/${this.apiKey}/stats?noUsers=${noUsers}`)
+        return this.get<IKeyStats>(`v3/keys/${this.apiKey}/stats?noUsers=${noUsers}`)
     }
 
     // Create a new key/user
@@ -114,6 +116,16 @@ export class LuarmorClient {
     // Link Discord ID to a key
     async linkDiscord(project_id: string, payload: ILinkDiscordPayload) {
         return this.post<ILinkDiscord>(`v3/projects/${project_id}/users/linkdiscord`, payload)
+    }
+
+    // This will blacklist an existing key, and the HWID linked to it (if any). 
+    async blacklistKey(project_id: string, payload: IBlacklistPayload) {
+        return this.post<IBlacklistPayload>(`v3/projects/${project_id}/users/blacklist`, payload)
+    }
+
+    // Unblacklist a key
+    async unblacklistKey(project_id: string, unban_token: string) {
+        return this.get(`v3/projects/${project_id}/users/unban?unban_token=${unban_token}`)
     }
 
     // Create a new script
